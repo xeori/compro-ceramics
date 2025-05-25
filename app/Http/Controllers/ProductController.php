@@ -14,8 +14,12 @@ public function index(Request $request)
 
     if ($request->has('category') && $request->category != 'all') {
         $query->whereHas('category', function ($q) use ($request) {
-            $q->where('slug', $request->category); // Filter berdasarkan slug kategori
+            $q->where('slug', $request->category);
         });
+    }
+
+    if ($request->has('size') && $request->size != 'all') {
+        $query->where('size', $request->size); // INI WAJIB ADA
     }
 
     if ($request->has('search')) {
@@ -25,12 +29,13 @@ public function index(Request $request)
         });
     }
 
-    $products = $query->get();
-      $products = $query->paginate(9)->withQueryString();
+    $products = $query->paginate(9)->withQueryString();
     $categories = Category::all();
+    $sizes = Product::select('size')->distinct()->get(); // ambil semua ukuran unik
 
-    return view('product', compact('products', 'categories'));
+    return view('product', compact('products', 'categories', 'sizes'));
 }
+
 
 
 

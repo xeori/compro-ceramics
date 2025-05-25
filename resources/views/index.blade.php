@@ -13,50 +13,59 @@
   <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="icon" href="{{ asset('assets/img/iconkurumi-removebg.png') }}" type="image/png" />
+
+
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-  <nav class="navbar navbar-expand-md fixed-top" id="mainNav" style="color: rgb(255, 255, 255)">
+  <nav class="navbar navbar-expand-md fixed-top" id="mainNav" style="color: #fff">
     <div class="container">
-      <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255)">Mika</a><button data-bs-toggle="collapse"
-        class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive"
-        aria-expanded="false" aria-label="Toggle navigation" value="Menu">
-        <i class="fa fa-bars"></i>
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/navbar.png" alt="Mika Logo" class="logo-img">
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars" style="color: #fff"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item nav-link">
-            <a class="nav-link active" href="#about" style="color: rgb(255, 255, 255)">About</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="#about" style="color: #fff">About</a>
           </li>
-          <li class="nav-item nav-link">
-            <a class="nav-link" href="#download" style="color: rgb(255, 255, 255)">Product</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#download" style="color: #fff">Product</a>
           </li>
-          <li class="nav-item nav-link">
-            <a class="nav-link" href="#contact" style="color: rgb(255, 255, 255)">contact</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" style="color: #fff">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <header class="masthead" style="background-image: url('assets/img/dashboard.jpeg')">
-    <div class="intro-body">
+
+  <header class="masthead" style="background-image: url('assets/img/salira.jpg'); position: relative;">
+    <!-- Overlay gelap -->
+    <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 0;"></div>
+
+    <!-- Konten di atas overlay -->
+    <div class="intro-body" style="position: relative; z-index: 1;">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h1 class="brand-heading" style="color: #ffffff">
-              Flow Ceramics
-            </h1>
+            <h1 class="brand-heading" style="color: #ffffff">Forte Ceramics</h1>
             <p class="intro-text" style="color: #ffffff">
-              we have all the ceramics in the world.<br />Created with love.
+              Image Of Quality.
             </p>
             <a class="btn btn-link btn-circle" role="button" href="#about"
-              style="color: #ffffff; background: rgba(255, 255, 255, 0)"><i class="fa fa-angle-double-down"
-                style="color: #ffffff"></i></a>
+              style="color: #ffffff; background: rgba(255, 255, 255, 0)">
+              <i class="fa fa-angle-double-down" style="color: #ffffff"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </header>
+
   <section class="section text-center content-section" id="about">
     <div class="container">
       <div class="row">
@@ -79,95 +88,86 @@
       </div>
     </div>
   </section>
-  <section class="section text-center download-section content-section" id="download" style="
-        background: linear-gradient(to right, transparent 65%, #ffffff 35%),
-          url('assets/img/flat-flay.jpg') left center no-repeat;
-        background-size: 100% 100%, 50% 80%;
-        background-repeat: no-repeat;
-        background-position: left center, left center;
-        padding: 60px 0;
-        color: white;
-      ">
-    <h1 class="text-black mb-5">Products</h1>
+  <section class="section download-section content-section" id="download" style="
+  padding: 60px 0;
+  background-image: url('{{ asset('assets/img/laut.jpg') }}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+">
     <div class="container">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <!-- Produk Card -->
-          <div class="swiper-slide">
-            <div class="card shadow product-card" onclick="showPopup(this, event)">
-              <img src="assets/img/kos.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Keramik Glossy</h5>
-                <p class="card-text">
-                  Keramik dengan permukaan mengkilap untuk dapur atau kamar
-                  mandi.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow product-card" onclick="showPopup(this, event)">
-              <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Motif Alami</h5>
-                <p class="card-text">
-                  Keramik bernuansa alam cocok untuk suasana tenang dan
-                  estetik.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow product-card" onclick="showPopup(this, event)">
-              <img src="assets/img/close.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Keramik Minimalis</h5>
-                <p class="card-text">
-                  Desain simple dan modern, cocok untuk hunian kontemporer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow product-card" onclick="showPopup(this, event)">
-              <img src="assets/img/black-marble.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Keramik Minimalis</h5>
-                <p class="card-text">
-                  Desain simple dan modern, cocok untuk hunian kontemporer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card shadow product-card" onclick="showPopup(this, event)">
-              <img src="assets/img/kos.jpg" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Keramik Glossy</h5>
-                <p class="card-text">
-                  Keramik dengan permukaan mengkilap untuk dapur atau kamar
-                  mandi.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-center gap-4">
+        <!-- KIRI: Title dan Link (tetap kiri tapi vertikal tengah) -->
+        <div class="text-start" style="flex: 1; min-width: 200px;">
+          <h1 class="text-dark mb-2">Products</h1>
+          <a href="{{ route('product') }}" class="view-link">View All -</a>
         </div>
-      </div>
-      <div class="swiper-custom-nav">
-        <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-left" />
-        <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-right" />
-      </div>
 
-      <a href="{{ route('product') }}" class="btn btn-primary mt-5">
-        View all products
-      </a>
 
-      <!-- POPUP -->
-      <div id="productPopup" class="popup">
-        <div class="popup-content">
-          <img id="popupImage" src="" alt="Gambar Produk" />
-          <h3 id="popupTitle"></h3>
-          <p id="popupDesc"></p>
+        <!-- KANAN: Swiper -->
+        <div class="swiper" style="flex: 2;">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="card shadow product-card" onclick="showPopup(this, event)">
+                <img src="assets/img/kos.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Keramik Glossy</h5>
+                  <p class="card-text">Keramik dengan permukaan mengkilap untuk dapur atau kamar mandi.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="card shadow product-card" onclick="showPopup(this, event)">
+                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Motif Alami</h5>
+                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="card shadow product-card" onclick="showPopup(this, event)">
+                <img src="assets/img/close.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Keramik Minimalis</h5>
+                  <p class="card-text">Desain simple dan modern, cocok untuk hunian kontemporer.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tambahkan slide lainnya sesuai kebutuhan -->
+            <div class="swiper-slide">
+              <div class="card shadow product-card" onclick="showPopup(this, event)">
+                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Motif Alami</h5>
+                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card shadow product-card" onclick="showPopup(this, event)">
+                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Motif Alami</h5>
+                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Navigasi Panah -->
+          <div class="swiper-custom-nav mt-3 d-flex justify-content-center gap-4">
+            <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-left" />
+            <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-right" />
+          </div>
         </div>
       </div>
     </div>
@@ -208,75 +208,56 @@
       height="450"></iframe>
   </div>
   <footer>
-    <div class="container text-center">
-      <p>Copyright ©&nbsp;Brand 2025</p>
+    <div class="container">
+      <h3>Forte Ceramics</h3>
+      <img src="assets/img/ias.png" alt="Logo Forte Ceramics" />
+      <p class="small">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+      <p>&copy; Forte Ceramics 2025</p>
     </div>
   </footer>
   <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('assets/js/grayscale.js') }}"></script>
 
+  <!-- SWIPER JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".swiper", {
+    const swiper = new Swiper('.swiper', {
       loop: true,
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 3,
+      spaceBetween: 16,
+      loopedSlides: 3,
       navigation: {
-        nextEl: ".arrow-right",
-        prevEl: ".arrow-left",
+        nextEl: '.arrow-right',
+        prevEl: '.arrow-left',
       },
       breakpoints: {
-        576: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        992: { slidesPerView: 4 },
+        320: { slidesPerView: 1, spaceBetween: 12 },
+        576: { slidesPerView: 2, spaceBetween: 16 },
+        992: { slidesPerView: 3, spaceBetween: 16 },
+        1200: { slidesPerView: 4, spaceBetween: 16 },
       },
     });
+
+
+
+
   </script>
 
+  <!-- CARD ANIMASI (OPSIONAL) -->
   <script>
     function animateCard(card) {
       card.classList.add("clicked");
       setTimeout(() => {
         card.classList.remove("clicked");
-      }, 300); // animasi berlangsung 300ms
+      }, 300);
     }
   </script>
 
-  <script>
-    function showPopup(cardElement, event) {
-      event.stopPropagation(); // Cegah propagasi ke document
 
-      const title = cardElement.querySelector(".card-title")?.textContent;
-      const desc = cardElement.querySelector(".card-text")?.textContent;
-      const image = cardElement.querySelector("img")?.getAttribute("src");
 
-      const popup = document.getElementById("productPopup");
-
-      document.getElementById("popupTitle").textContent = title || "No title";
-      document.getElementById("popupDesc").textContent =
-        desc || "No description";
-      document.getElementById("popupImage").src = image || "";
-
-      popup.style.display = "flex"; // Menampilkan popup
-
-      // Menambahkan animasi
-      void popup.offsetWidth; // Memaksa reflow agar transisi dapat dimulai
-      popup.classList.add("show");
-    }
-
-    // Menutup popup ketika klik di luar konten popup
-    document.addEventListener("click", function (event) {
-      const popup = document.getElementById("productPopup");
-      const content = popup.querySelector(".popup-content");
-
-      if (popup.style.display === "flex" && !content.contains(event.target)) {
-        popup.classList.remove("show");
-        setTimeout(() => {
-          popup.style.display = "none"; // Menyembunyikan popup setelah animasi selesai
-        }, 500); // Waktu animasi disesuaikan
-      }
-    });
-  </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const sections = document.querySelectorAll(".section");
