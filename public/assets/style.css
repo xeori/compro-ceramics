@@ -1,0 +1,71 @@
+body {
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    color: rgba(69, 93, 88, 255);
+    /* beri ruang agar konten tidak tertutup navbar fixed-top */
+}
+
+main.container {
+    padding-top: 50px;
+    flex: 1;
+    /* beri ruang lebih lega */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-link {
+    color: rgba(69, 93, 88, 1);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: rgb(43, 184, 167);
+    /* Warna saat hover dan saat active */
+
+    /* Opsional: biar kelihatan aktif */
+    text-decoration: none;
+    /* Opsional: efek tambahan */
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    color: rgba(69, 93, 88, 1);
+    border: 2px solid rgba(69, 93, 88, 1);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: rgba(69, 93, 88, 1);
+    color: #fff;
+    border-color: rgba(69, 93, 88, 1);
+}
+
+.page-link {
+    background-color: transparent;
+    color: rgba(69, 93, 88, 1);
+    border: 1px solid rgba(69, 93, 88, 1);
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: rgba(69, 93, 88, 1);
+    color: #fff;
+    border-color: rgba(69, 93, 88, 1);
+}
+
+.page-item.active .page-link {
+    background-color: rgba(69, 93, 88, 1);
+    color: #fff;
+    border-color: rgba(69, 93, 88, 1);
+}

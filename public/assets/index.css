@@ -1,6 +1,7 @@
 body {
     background-color: #ffffff;
-    color: black;
+    color: rgba(69, 93, 88, 255);
+    background-color: rgba(250, 247, 242, 255);
     font-family: Arial, sans-serif;
 }
 
@@ -118,9 +119,11 @@ body {
 
 /* FOOTER */
 footer {
-    background-color: rgb(35, 109, 100);
+    background-color: rgba(69, 93, 88, 255);
     color: white;
     padding: 1.5rem 0;
+    border-top: 5px solid rgb(35, 109, 100); /* Ubah 4px sesuai ketebalan yang diinginkan */
+    padding-top: 1rem; /* Tambahan agar konten tidak terlalu mepet garis */
 }
 
 footer .container {
@@ -153,7 +156,7 @@ footer p:last-child {
 .view-link {
     display: block;
     font-size: 18px;
-    color: #212529 !important;
+    color: rgba(69, 93, 88, 255) !important;
     text-decoration: none;
     transition: transform 0.2s ease;
     margin-top: 0.25rem;
@@ -162,4 +165,36 @@ footer p:last-child {
 .view-link:hover {
     transform: translateX(4px);
     text-decoration: none;
+}
+.logo-img {
+    max-width: 150px;
+    height: auto;
+}
+h1 {
+    color: rgba(69, 93, 88, 255);
+}
+/* Default (di atas halaman) */
+/* Default (di atas halaman) */
+#mainNav .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus {
+    color: rgb(35, 109, 100);
+}
+
+/* Saat sudah discroll */
+#mainNav.scrolled .nav-link {
+    color: rgb(35, 109, 100);
+}
+
+#mainNav.scrolled .nav-link:hover,
+#mainNav.scrolled .nav-link:focus {
+    color: rgb(
+        43,
+        184,
+        167
+    ) !important; /* pakai !important supaya prioritas lebih tinggi */
 }

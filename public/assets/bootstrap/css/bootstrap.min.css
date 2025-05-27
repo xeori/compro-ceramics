@@ -4278,8 +4278,8 @@ fieldset:disabled .btn {
 }
 .navbar-dark,
 .navbar[data-bs-theme="dark"] {
-    --bs-navbar-color: rgba(255, 255, 255, 0.55);
-    --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+    --bs-navbar-color: rgba(212, 4, 4, 0.55);
+    --bs-navbar-hover-color: rgba(255, 13, 13, 0.75);
     --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
     --bs-navbar-active-color: #fff;
     --bs-navbar-brand-color: #fff;
@@ -4929,7 +4929,7 @@ fieldset:disabled .btn {
     --bs-list-group-action-active-bg: var(--bs-secondary-bg);
     --bs-list-group-disabled-color: var(--bs-secondary-color);
     --bs-list-group-disabled-bg: var(--bs-body-bg);
-    --bs-list-group-active-color: #fff;
+    --bs-list-group-active-color: #f01c1c;
     --bs-list-group-active-bg: #42dca3;
     --bs-list-group-active-border-color: #42dca3;
     display: flex;
@@ -11989,7 +11989,7 @@ a:hover {
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        background: #000;
+        background: #ffffff;
     }
     #mainNav .nav-link.active {
         outline: none;

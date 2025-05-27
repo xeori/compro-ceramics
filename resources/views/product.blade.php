@@ -15,40 +15,15 @@
         href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap" />
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
-    <style>
-        body {
-            padding-top: 56px;
-            display: flex;
-            flex-direction: column;
-            /* beri ruang agar konten tidak tertutup navbar fixed-top */
-        }
-
-        main.container {
-            padding-top: 50px;
-            flex: 1;
-            /* beri ruang lebih lega */
-        }
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-        }
-
-        footer {
-
-            padding: 1rem;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
 </head>
 
 <body>
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="assets/img/navbar.png" alt="Mika Logo" class="logo-img" style="height: 40px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -58,13 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link " href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#download">Product</a>
+                        <a class="nav-link " href="">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inspiration</a>
+                        <a class="nav-link" href="{{ route('inspiration') }}">Inspiration</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +71,7 @@
 
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari produk..."
                 class="form-control w-auto" />
-            <button type="submit" class="btn btn-primary">Cari</button>
+            <button type="submit" class="btn btn-outline-custom">Cari</button>
         </form>
 
 
@@ -108,12 +83,12 @@
 
                     <div class="card h-100 shadow-sm"
                         onclick="showPopup(
-                                                                                                                                                                                                                                                                                '{{ $product->name }}',
-                                                                                                                                                                                                                                                                                '{{ $product->category->name }}',
-                                                                                                                                                                                                                                                                                '{{ $product->size }}',
-                                                                                                                                                                                                                                                                                '{{ $product->description }}',
-                                                                                                                                                                                                                                                                                '{{ asset('storage/' . $product->image) }}'
-                                                                                                                                                                                                                                                                            )">
+                                                                                                                                                                                                                                                                                                                                                            '{{ $product->name }}',
+                                                                                                                                                                                                                                                                                                                                                            '{{ $product->category->name }}',
+                                                                                                                                                                                                                                                                                                                                                            '{{ $product->size }}',
+                                                                                                                                                                                                                                                                                                                                                            '{{ $product->description }}',
+                                                                                                                                                                                                                                                                                                                                                            '{{ asset('storage/' . $product->image) }}'
+                                                                                                                                                                                                                                                                                                                                                        )">
                         <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top"
                             style="aspect-ratio: 1 / 1; object-fit: cover;" />
                     </div>
