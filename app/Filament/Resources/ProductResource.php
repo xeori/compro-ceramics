@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
+use Filament\Forms\Components\Select;
+use App\Models\Inspiration;
+use Filament\Tables\Columns\TextColumn;
 
 class ProductResource extends Resource
 {
@@ -30,16 +33,16 @@ class ProductResource extends Resource
                     ->maxLength(255)
                     ->label('Product Name'),
 
-               Forms\Components\TextInput::make('slug')
-    ->label('Product Slug')
-    ->disabled()
-    ->unique(Product::class, 'slug', fn($record) => $record),
+                Forms\Components\TextInput::make('slug')
+                    ->label('Product Slug')
+                    ->disabled()
+                    ->unique(Product::class, 'slug', fn($record) => $record),
 
 
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->label('Product Description'),
-                
+
                 Forms\Components\TextInput::make('size')
                     ->required()
                     ->maxLength(255)
@@ -50,11 +53,19 @@ class ProductResource extends Resource
                     ->required()
                     ->label('Category'),
 
+                Select::make('inspiration_id')
+                    ->label('Inspiration')
+                    ->relationship('inspiration', 'name') // pastikan 'name' ada di tabel inspirations
+                    ->searchable()
+                    ->preload(),
+
                 Forms\Components\FileUpload::make('image') // Menambahkan field untuk gambar
                     ->image() // Menandakan bahwa hanya gambar yang boleh di-upload
                     ->disk('public') // Tentukan disk tempat menyimpan gambar
                     ->directory('products') // Tentukan folder tempat menyimpan gambar
                     ->label('Product Image'),
+
+
             ]);
     }
 
@@ -85,16 +96,22 @@ class ProductResource extends Resource
                     ->label('Category Name')
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Created At')
-                    ->dateTime()
-                    ->sortable(),
-
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Product Image')
                     ->disk('public') // Tentukan disk yang digunakan
                     ->url(fn($record) => $record->image ? Storage::url('products/' . $record->image) : null) // URL gambar mengarah ke 'products/{image}'
                     ->size(50), // Ukuran gambar yang ditampilkan
+
+
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('inspiration.name')
+                    ->label('Inspiration')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([/* Filters can be added here */])
             ->actions([

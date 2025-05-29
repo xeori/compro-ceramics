@@ -1,15 +1,15 @@
+/* Import font Quicksand (pastikan juga di-head HTML sudah ada link Google Fonts-nya) */
 body {
+    font-family: "Quicksand", sans-serif;
     padding-top: 56px;
     display: flex;
     flex-direction: column;
-    color: rgba(69, 93, 88, 255);
-    /* beri ruang agar konten tidak tertutup navbar fixed-top */
+    color: rgba(69, 93, 88, 1); /* Gunakan format normal rgba */
 }
 
 main.container {
     padding-top: 50px;
     flex: 1;
-    /* beri ruang lebih lega */
 }
 
 html,
@@ -18,26 +18,29 @@ body {
     margin: 0;
 }
 
+/* Footer */
 footer {
     padding: 1rem;
     text-align: center;
 }
 
+/* Navbar links tetap pakai Cabin */
 .nav-link {
     color: rgba(69, 93, 88, 1);
     transition: color 0.3s ease;
+    font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: rgb(43, 184, 167);
-    /* Warna saat hover dan saat active */
-
-    /* Opsional: biar kelihatan aktif */
     text-decoration: none;
-    /* Opsional: efek tambahan */
 }
 
+/* Tombol pencarian */
 .btn-outline-custom {
     background-color: transparent;
     color: rgba(69, 93, 88, 1);
@@ -51,6 +54,7 @@ footer {
     border-color: rgba(69, 93, 88, 1);
 }
 
+/* Pagination */
 .page-link {
     background-color: transparent;
     color: rgba(69, 93, 88, 1);
@@ -68,4 +72,19 @@ footer {
     background-color: rgba(69, 93, 88, 1);
     color: #fff;
     border-color: rgba(69, 93, 88, 1);
+}
+
+/* Logo */
+.logo-img {
+    max-width: 150px;
+    height: auto;
+}
+.popup-content {
+    position: relative;
+    z-index: 1100; /* pastikan lebih tinggi dari background overlay */
+}
+
+.btn-close {
+    z-index: 1200;
+    position: relative;
 }

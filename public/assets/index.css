@@ -5,60 +5,16 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* CARD PRODUK */
-.product-card {
-    width: 280px; /* ukuran tetap */
-    overflow: hidden;
-    border-radius: 12px;
-    background: white;
-    transition: transform 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* supaya konten center horizontal */
-    padding-bottom: 12px; /* beri space bawah */
+.row::-webkit-scrollbar {
+    height: 8px;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
+.row::-webkit-scrollbar-thumb {
+    background: rgba(69, 93, 88, 0.8);
+    border-radius: 10px;
 }
 
-/* bungkus gambar supaya bisa diatur */
-.product-card .image-wrapper {
-    width: 100%; /* penuh card */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 0 0 0;
-}
-
-.product-card .image-wrapper img {
-    max-width: 160px; /* ukuran gambar maksimal */
-    max-height: 160px;
-    object-fit: contain;
-    border-radius: 12px;
-}
-
-/* Bagian bawah card (judul & deskripsi) */
-.product-card .card-body {
-    width: 100%;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* text center */
-    text-align: center;
-}
-
-.card-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-}
-
-.card-text {
-    font-size: 0.9rem;
-    color: #333;
+figure {
     margin: 0;
 }
 
@@ -72,51 +28,12 @@ body {
 }
 
 /* SWIPER */
-.swiper {
-    padding: 0;
-    overflow: visible;
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
-.swiper-wrapper {
-    padding: 0;
-    margin: 0;
-}
-.swiper-slide {
-    width: 280px !important; /* ukuran tetap supaya sesuai .product-card */
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.swiper-slide:last-child {
-    margin-right: 0 !important;
-}
-
-/* SWIPER NAVIGATION ARROW */
-.swiper-custom-nav {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    user-select: none;
-    pointer-events: auto;
-}
-
-.swiper-custom-nav img.arrow {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.swiper-custom-nav img.arrow:hover {
-    filter: brightness(0) invert(0.7);
-}
-
-.arrow-left {
-    transform: scaleX(-1);
-    transform-origin: center;
-}
-
 /* FOOTER */
 footer {
     background-color: rgba(69, 93, 88, 255);
@@ -164,6 +81,7 @@ footer p:last-child {
 
 .view-link:hover {
     transform: translateX(4px);
+    color: rgb(43, 184, 167);
     text-decoration: none;
 }
 .logo-img {
@@ -172,8 +90,14 @@ footer p:last-child {
 }
 h1 {
     color: rgba(69, 93, 88, 255);
+    font-family: "Quicksand", sans-serif;
 }
-/* Default (di atas halaman) */
+h2,
+p {
+    font-family: "Quicksand", sans-serif;
+    text-transform: none;
+}
+
 /* Default (di atas halaman) */
 #mainNav .nav-link {
     color: white;
@@ -187,7 +111,12 @@ h1 {
 
 /* Saat sudah discroll */
 #mainNav.scrolled .nav-link {
-    color: rgb(35, 109, 100);
+    color: rgba(69, 93, 88, 0.8);
+}
+
+#mainNav.scrolled .nav-link:hover,
+#mainNav.scrolled .nav-link:focus {
+    color: rgba(69, 93, 88, 1) !important;
 }
 
 #mainNav.scrolled .nav-link:hover,

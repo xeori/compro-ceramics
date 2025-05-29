@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/products', [ProductController::class, 'index'])->name('product');
 
 Route::get('/inspirations', [InspirationController::class, 'index'])->name('inspiration');
+Route::get('/catalog', [ProductController::class, 'catalog'])->name('catalog');

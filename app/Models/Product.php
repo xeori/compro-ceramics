@@ -21,6 +21,10 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function inspiration()
+{
+    return $this->belongsTo(Inspiration::class);
+}
 
     public static function boot()
     {

@@ -11,6 +11,11 @@
     href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap" />
   <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+  <!-- Preconnect agar loading lebih cepat -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="icon" href="{{ asset('assets/img/iconkurumi-removebg.png') }}" type="image/png" />
 
@@ -88,90 +93,46 @@
                       </div>
                     </div>
                   </section>
-                  <section class="section download-section content-section" id="download" style="
-  padding: 60px 0;
-  background-image: url('{{ asset('assets/img/laut.jpg') }}');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-">
+                  <section class="py-5">
+                    <div class="container col-md-12">
+                      <h2 style="margin-bottom: 0.5rem;">Product</h2>
+                      <p style="margin-top: 0;">Elegant, durable floor tiles to elevate your interior space with style
+                        and strength.</p>
+
+                      <a href="{{ route('product') }}" class="view-link">View All</a>
+                    </div>
+
                     <div class="container">
-                      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-center gap-4">
-                        <!-- KIRI: Title dan Link (tetap kiri tapi vertikal tengah) -->
-                        <div class="text-start" style="flex: 1; min-width: 200px;">
-                          <h1 class=" mb-2">Products</h1>
-                          <a href="{{ route('product') }}" class="view-link">View All -</a>
+                      <div class="row flex-nowrap overflow-auto" style="scroll-snap-type: x mandatory;">
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/lora-black.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
                         </div>
-
-
-                        <!-- KANAN: Swiper -->
-                        <div class="swiper" style="flex: 2;">
-                          <div class="swiper-wrapper">
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide">
-                              <div class="card shadow product-card" onclick="showPopup(this, event)">
-                                <img src="assets/img/kos.jpg" class="card-img-top" />
-                                <div class="card-body">
-                                  <h5 class="card-title">Keramik Glossy</h5>
-                                  <p class="card-text">Keramik dengan permukaan mengkilap untuk dapur atau kamar mandi.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="swiper-slide">
-                              <div class="card shadow product-card" onclick="showPopup(this, event)">
-                                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
-                                <div class="card-body">
-                                  <h5 class="card-title">Motif Alami</h5>
-                                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Slide 3 -->
-                            <div class="swiper-slide">
-                              <div class="card shadow product-card" onclick="showPopup(this, event)">
-                                <img src="assets/img/close.jpg" class="card-img-top" />
-                                <div class="card-body">
-                                  <h5 class="card-title">Keramik Minimalis</h5>
-                                  <p class="card-text">Desain simple dan modern, cocok untuk hunian kontemporer.</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Tambahkan slide lainnya sesuai kebutuhan -->
-                            <div class="swiper-slide">
-                              <div class="card shadow product-card" onclick="showPopup(this, event)">
-                                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
-                                <div class="card-body">
-                                  <h5 class="card-title">Motif Alami</h5>
-                                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                              <div class="card shadow product-card" onclick="showPopup(this, event)">
-                                <img src="assets/img/paper-texture-with-watercolor.jpg" class="card-img-top" />
-                                <div class="card-body">
-                                  <h5 class="card-title">Motif Alami</h5>
-                                  <p class="card-text">Keramik bernuansa alam cocok untuk suasana tenang dan estetik.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-
-                          <!-- Navigasi Panah -->
-                          <div class="swiper-custom-nav mt-3 d-flex justify-content-center gap-4">
-                            <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-left" />
-                            <img src="/assets/img/reshot-icon-right-arrow.svg" class="arrow arrow-right" />
-                          </div>
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/larantuka-brown.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/laut-black.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/balatu-brown.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/salira-blue.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
+                        </div>
+                        <div class="col-8 col-sm-6 col-md-4 px-2" style="scroll-snap-align: start;">
+                          <figure>
+                            <img src="{{ asset('assets/img/aralle-cream.jpg') }}" class="img-fluid rounded" alt="">
+                          </figure>
                         </div>
                       </div>
                     </div>
@@ -180,7 +141,7 @@
                   <section class="section content-section" id="contact">
                     <div class="container">
                       <div class="row">
-                        <div class="col-lg-8 mx-auto">
+                        <div class="col-lg-12 mx-auto">
                           <h2>Contact us</h2>
                           <p>
                             Etiam nec quam vitae nisi blandit congue nec a nunc. Donec nec
@@ -229,86 +190,38 @@
                   <!-- SWIPER JS -->
                   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
                   <script>
-                    const swiper = new Swiper('.swiper', {
-                      loop: true,
+                    const swiper = new Swiper('.mySwiper', {
                       slidesPerView: 3,
-                      spaceBetween: 16,
-                      loopedSlides: 3,
+                      spaceBetween: 30,
+                      loop: false,
                       navigation: {
-                        nextEl: '.arrow-right',
-                        prevEl: '.arrow-left',
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
                       },
                       breakpoints: {
-                        320: { slidesPerView: 1, spaceBetween: 12 },
-                        576: { slidesPerView: 2, spaceBetween: 16 },
-                        992: { slidesPerView: 3, spaceBetween: 16 },
-                        1200: { slidesPerView: 4, spaceBetween: 16 },
-                      },
-                    });
-
-
-
-
-                  </script>
-
-                  <!-- CARD ANIMASI (OPSIONAL) -->
-                  <script>
-                    function animateCard(card) {
-                      card.classList.add("clicked");
-                      setTimeout(() => {
-                        card.classList.remove("clicked");
-                      }, 300);
-                    }
-                  </script>
-
-
-
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                      const sections = document.querySelectorAll(".section");
-
-                      // Menambahkan kelas 'visible' ke setiap section saat halaman dimuat
-                      sections.forEach((section) => {
-                        section.classList.add("visible");
-                      });
-                    });
-
-                    function revealOnScroll() {
-                      const sections = document.querySelectorAll(".section");
-                      const windowHeight = window.innerHeight;
-
-                      sections.forEach((section) => {
-                        const sectionTop = section.getBoundingClientRect().top;
-                        const triggerPoint = windowHeight * 0.85; // bisa diubah sesuai keinginan
-
-                        if (sectionTop < triggerPoint) {
-                          section.classList.add("show");
-                        }
-                      });
-                    }
-
-                    window.addEventListener("scroll", revealOnScroll);
-                    window.addEventListener("load", revealOnScroll); // trigger awal
-                  </script>
-                  <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                      const navbar = document.getElementById('mainNav');
-
-                      function toggleNavbarColor() {
-                        if (window.scrollY > 50) { // bisa ganti 50 sesuai kebutuhan
-                          navbar.classList.add('scrolled');
-                        } else {
-                          navbar.classList.remove('scrolled');
-                        }
+                        0: {
+                          slidesPerView: 1,
+                        },
+                        576: {
+                          slidesPerView: 2,
+                        },
+                        992: {
+                          slidesPerView: 3,
+                        },
                       }
-
-                      // cek saat scroll
-                      window.addEventListener('scroll', toggleNavbarColor);
-
-                      // cek juga saat load halaman (jika posisi awal sudah scroll)
-                      toggleNavbarColor();
                     });
                   </script>
+                  <script>
+                    window.addEventListener("scroll", function () {
+                      const nav = document.getElementById("mainNav");
+                      if (window.scrollY > 50) {
+                        nav.classList.add("scrolled");
+                      } else {
+                        nav.classList.remove("scrolled");
+                      }
+                    });
+                  </script>
+
 
 </body>
 

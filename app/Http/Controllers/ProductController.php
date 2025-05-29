@@ -36,7 +36,11 @@ public function index(Request $request)
     return view('product', compact('products', 'categories', 'sizes'));
 }
 
+public function catalog()
+{
+    $products = Product::all();
+    return view('catalog', compact('products'));
 
 
-
+}
 }

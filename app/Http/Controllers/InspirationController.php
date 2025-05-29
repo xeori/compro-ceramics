@@ -8,8 +8,9 @@ class InspirationController extends Controller
 {
 public function index()
 {
-    $inspirations = Inspiration::all();
+    $inspirations = Inspiration::paginate(9)->withQueryString();
 
     return view('inspiration', compact('inspirations'));
 }
+
 }
