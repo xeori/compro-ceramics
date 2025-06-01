@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-    <link rel="icon" href="{{ asset('assets/img/iconkurumi-removebg.png') }}" type="image/png" />
+
 
     <link rel="stylesheet" href="{{ asset('assets/index.css') }}" />
     <link rel="stylesheet"
@@ -18,7 +18,8 @@
     <!-- Preconnect agar loading lebih cepat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <title>Inspiration Keramik</title>
+    <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/png" />
+    <title>Inspiration - Forte</title>
 
 </head>
 

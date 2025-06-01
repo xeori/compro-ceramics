@@ -26,8 +26,8 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->brandName('MiKA')
-            ->brandLogo(fn () => asset('images/logo.png')) // Tambahan opsional
+            ->brandName('Forte')
+            ->brandLogo(fn () => asset('assets/img/logo.png')) // Tambahan opsional
             ->colors([
                 'primary' => '#8B5CF6',
             ])
@@ -56,4 +56,5 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+    
 }

@@ -11943,62 +11943,75 @@ a:hover {
     text-decoration: none;
     color: #35b082;
 }
+/* Default navbar untuk semua device: transparan */
 #mainNav {
     font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 0;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: #000;
+    border-bottom: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+/* Navbar saat sudah di-scroll (navbar-shrink), semua device */
+#mainNav.navbar-shrink {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Navbar brand dan link */
+#mainNav .navbar-brand,
+#mainNav a.nav-link {
+    color: white; /* default warna teks putih */
+    transition: color 0.3s ease;
+}
+
+#mainNav.navbar-shrink .navbar-brand,
+#mainNav.navbar-shrink a.nav-link {
+    color: rgba(69, 93, 88, 1); /* warna teks hitam saat navbar-shrink */
+}
+
+/* Navbar toggler icon default */
 #mainNav .navbar-toggler {
-    font-size: 14px;
-    padding: 11px;
-    color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid white;
+    color: white;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
-#mainNav .navbar-brand {
-    font-weight: 700;
+
+/* Navbar toggler saat shrink */
+#mainNav.navbar-shrink .navbar-toggler {
+    color: black;
+    border-color: black;
 }
-#mainNav a {
-    color: #fff;
+
+/* Hover efek link */
+#mainNav a.nav-link:hover {
+    color: #27ae60; /* warna hijau saat hover */
 }
-#mainNav .navbar-nav .nav-item {
-    transition: background 0.3s ease-in-out;
+
+/* Navbar toggler default sembunyi saat navbar belum shrink */
+#mainNav:not(.navbar-shrink) .navbar-toggler {
+    display: none;
 }
-#mainNav .navbar-nav .nav-item:hover {
-    color: fade(white, 80%);
-    outline: none;
-    background-color: transparent;
+
+/* Tampilkan navbar toggler hanya di layar mobile saat navbar shrink */
+@media (max-width: 991.98px) {
+    #mainNav.navbar-shrink .navbar-toggler {
+        display: block;
+    }
 }
-#mainNav .navbar-nav .nav-item:active,
-#mainNav .navbar-nav .nav-item:focus {
-    outline: none;
-    background-color: transparent;
-}
+
+/* Sembunyikan navbar toggler di desktop walau navbar shrink */
 @media (min-width: 992px) {
-    #mainNav {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out,
-            padding-bottom 0.3s;
-        letter-spacing: 1px;
-        border-bottom: none;
-        background: transparent;
-    }
-    #mainNav.navbar-shrink {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        background: #ffffff;
-    }
-    #mainNav .nav-link.active {
-        outline: none;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-    #mainNav .nav-link.active:hover {
-        color: #fff;
+    #mainNav .navbar-toggler {
+        display: none !important;
     }
 }
+
 .masthead {
     display: table;
     width: 100%;
