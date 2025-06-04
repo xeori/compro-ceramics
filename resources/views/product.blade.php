@@ -15,37 +15,14 @@
     <!-- Preconnect agar loading lebih cepat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="assets/img/navbar.png" alt="Mika Logo" class="logo-img">
-            </a>
-            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link " href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="">Product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('inspiration') }}">Inspirations</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials.header')
     <!-- MAIN CONTENT -->
     <main class="container mb-5">
 
@@ -83,13 +60,13 @@
                 <div class="col-6 col-md-4 mb-4">
                     <div class="card h-100 shadow-sm"
                         onclick="showPopup(
-                                                                                                                                        '{{ $product->name }}',
-                                                                                                                                        '{{ $product->category->name }}',
-                                                                                                                                        '{{ $product->size }}',
-                                                                                                                                        `{{ str_replace('`', '\`', $product->description) }}`,
-                                                                                                                                        '{{ asset('storage/' . $product->image) }}',
-                                                                                                                                        '{{ $product->inspiration ? asset('storage/' . $product->inspiration->image_path) : '' }}'
-                                                                                                                                    )">
+                                                                                                                                                                            '{{ $product->name }}',
+                                                                                                                                                                            '{{ $product->category->name }}',
+                                                                                                                                                                            '{{ $product->size }}',
+                                                                                                                                                                            `{{ str_replace('`', '\`', $product->description) }}`,
+                                                                                                                                                                            '{{ asset('storage/' . $product->image) }}',
+                                                                                                                                                                            '{{ $product->inspiration ? asset('storage/' . $product->inspiration->image_path) : '' }}'
+                                                                                                                                                                        )">
                         <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top"
                             style="aspect-ratio: 1 / 1; object-fit: cover;" />
                     </div>
@@ -133,7 +110,7 @@
 
                         <!-- Gambar inspirasi (di bawah kategori) -->
                         <div id="inspirationWrapper" class="mb-3" style="display: none;">
-                            <a id="popupInspirationLink" href="#" target="_blank">
+                            <a id="popupInspirationLink" href="#" data-fancybox="inspiration">
                                 <img id="popupInspirationThumbnail" src="" alt="Gambar Inspirasi"
                                     class="img-fluid rounded border border-2" />
                             </a>
@@ -148,19 +125,26 @@
 
     </main>
     </div>
-    <footer>
-        <div class="container">
-            <h3>Forte Ceramics</h3>
-            <img src="assets/img/ias.png" alt="Logo Forte Ceramics" />
-            <p class="small">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua.
-            </p>
-            <p>&copy; Forte Ceramics 2025</p>
-        </div>
-    </footer>
+    @include('partials.footer')
+
+    @include('partials.whatsapp')
     <!-- JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind('[data-fancybox="inspiration"]', {
+            Toolbar: {
+                display: [
+                    { id: "close", position: "end" },
+                    "zoom",
+                    "fullscreen",
+                    "close",
+                ]
+            },
+            dragToClose: true,
+            animated: true,
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
