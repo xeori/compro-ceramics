@@ -4,7 +4,8 @@ body {
     padding-top: 56px;
     display: flex;
     flex-direction: column;
-    color: rgba(69, 93, 88, 1); /* Gunakan format normal rgba */
+    color: rgba(69, 93, 88, 255);
+    background-color: rgba(250, 247, 242, 255);
 }
 
 main.container {

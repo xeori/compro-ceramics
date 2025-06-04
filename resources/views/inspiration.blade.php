@@ -73,6 +73,8 @@
     @include('partials.footer')
 
     @include('partials.whatsapp')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
