@@ -2,10 +2,12 @@
     footer {
         background-color: #2f4f4f;
         color: #fff;
-        padding: 3rem 1rem;
+        padding: 3rem 1rem 1rem;
+        /* Bawah dikurangi agar lebih dekat ke bawah */
         border-top: 5px solid #1f7a6d;
         text-align: center;
         font-family: 'Segoe UI', sans-serif;
+        position: relative;
     }
 
     footer .container {
@@ -36,16 +38,21 @@
     }
 
     footer p {
-        font-size: 0.95rem;
-        opacity: 0.85;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+        /* Lebih gelap, tidak terlalu terang */
         margin: 0;
         letter-spacing: 0.3px;
+        padding-bottom: 0.5rem;
+        /* Sedikit spasi biar tidak terlalu nempel */
     }
 
     @media (max-width: 576px) {
         footer .quality-logos {
-            flex-direction: column;
-            gap: 1.5rem;
+            flex-direction: row;
+            /* Tetap sejajar di mobile */
+            flex-wrap: wrap;
+            gap: 1rem;
         }
     }
 </style>
@@ -53,9 +60,9 @@
 <footer>
     <div class="container">
         <div class="quality-logos">
-            <img src="assets/img/sni.png" alt="Logo SNI" />
             <img src="assets/img/ias.png" alt="Logo IAS" />
             <img src="assets/img/logo.png" alt="Logo Forte Ceramics" />
+            <img src="assets/img/sni.png" alt="Logo SNI" />
         </div>
         <p>&copy; 2025 Forte Ceramics. All rights reserved.</p>
     </div>
