@@ -97,8 +97,8 @@
                     <!-- Informasi Produk -->
                     <div class="col-md-6">
                         <h3 id="popupTitle" class="mb-3"></h3>
-                        <p><strong>Kategori:</strong> <span id="popupCategory"></span></p>
-                        <p><strong>Ukuran:</strong> <span id="popupSize"></span></p>
+                        <p><strong>Category:</strong> <span id="popupCategory"></span></p>
+                        <p><strong>Size:</strong> <span id="popupSize"></span></p>
                         <hr />
                         <p id="popupDesc"></p>
 
@@ -153,14 +153,14 @@
         // Data produk dari Blade ke JS
         const productsData = [
             @foreach ($products as $product)
-                                                                {
+                                                                    {
                     name: `{{ addslashes($product->name) }}`,
                     category: `{{ addslashes($product->category->name) }}`,
                     size: `{{ addslashes($product->size) }}`,
                     description: `{{ str_replace('`', '\\`', $product->description) }}`,
                 image: `{{ asset('storage/' . $product->image) }}`,
                 inspiration: `{{ $product->inspiration ? asset('storage/' . $product->inspiration->image_path) : '' }}`
-                                                                },
+                                                                    },
             @endforeach
         ];
 
