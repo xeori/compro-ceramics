@@ -1,11 +1,20 @@
-/* Import font Quicksand (pastikan juga di-head HTML sudah ada link Google Fonts-nya) */
+:root {
+    --primary-color: rgba(69, 93, 88, 1);
+    --primary-light: rgba(69, 93, 88, 0.1);
+    --background-color: rgba(250, 247, 242, 1);
+}
+
+html,
 body {
+    height: 100%;
+    margin: 0;
     font-family: "Quicksand", sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
     padding-top: 56px;
     display: flex;
     flex-direction: column;
-    color: rgba(69, 93, 88, 255);
-    background-color: rgba(250, 247, 242, 255);
+    min-height: 100vh;
 }
 
 main.container {
@@ -13,66 +22,62 @@ main.container {
     flex: 1;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Footer */
-footer {
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Navbar links tetap pakai Cabin */
+/* Navbar */
 .nav-link {
-    color: rgba(69, 93, 88, 1);
-    transition: color 0.3s ease;
+    color: var(--primary-color);
     font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: rgb(43, 184, 167);
-    text-decoration: none;
 }
 
-/* Tombol pencarian */
+/* Form Input & Select */
+.form-select,
+.form-control {
+    color: var(--primary-color);
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem var(--primary-light);
+    outline: none;
+}
+
+/* Tombol */
 .btn-outline-custom {
     background-color: transparent;
-    color: rgba(69, 93, 88, 1);
-    border: 2px solid rgba(69, 93, 88, 1);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 
 .btn-outline-custom:hover {
-    background-color: rgba(69, 93, 88, 1);
+    background-color: var(--primary-color);
     color: #fff;
-    border-color: rgba(69, 93, 88, 1);
 }
 
 /* Pagination */
 .page-link {
     background-color: transparent;
-    color: rgba(69, 93, 88, 1);
-    border: 1px solid rgba(69, 93, 88, 1);
+    color: var(--primary-color);
     transition: all 0.3s ease;
 }
 
 .page-link:hover {
-    background-color: rgba(69, 93, 88, 1);
+    background-color: var(--primary-color);
     color: #fff;
-    border-color: rgba(69, 93, 88, 1);
 }
 
 .page-item.active .page-link {
-    background-color: rgba(69, 93, 88, 1);
+    background-color: var(--primary-color);
     color: #fff;
-    border-color: rgba(69, 93, 88, 1);
 }
 
 /* Logo */
@@ -80,12 +85,66 @@ footer {
     max-width: 115px;
     height: auto;
 }
+
+/* Popup */
 .popup-content {
     position: relative;
-    z-index: 1100; /* pastikan lebih tinggi dari background overlay */
+    z-index: 1100;
 }
 
 .btn-close {
-    z-index: 1200;
     position: relative;
+    z-index: 1200;
+}
+
+/* Footer */
+footer {
+    background-color: #2f4f4f;
+    color: #ddd;
+    padding: 3rem 1rem 1rem;
+    border-top: 5px solid #1f7a6d;
+    text-align: center;
+    font-family: "Segoe UI", sans-serif;
+    margin-top: auto;
+}
+
+footer .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer .quality-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+footer .quality-logos img {
+    height: 90px;
+    max-width: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+footer .quality-logos img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+footer p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 576px) {
+    footer .quality-logos {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }

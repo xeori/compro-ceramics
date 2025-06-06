@@ -39,7 +39,7 @@
         {{-- FILTER & SEARCH FORM --}}
         <form method="GET" action="{{ route('product') }}" class="mb-4 d-flex flex-wrap gap-2">
             <select name="category" onchange="this.form.submit()" class="form-select w-auto">
-                <option value="all">Semua Kategori</option>
+                <option value="all">Category</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->slug }}" {{ request('category') === $category->slug ? 'selected' : '' }}>
                         {{ $category->name }}
@@ -48,7 +48,7 @@
             </select>
 
             <select name="size" onchange="this.form.submit()" class="form-select w-auto">
-                <option value="all">Semua Size</option>
+                <option value="all">Size</option>
                 @foreach ($sizes as $size)
                     <option value="{{ $size->size }}" {{ request('size') === $size->size ? 'selected' : '' }}>
                         {{ $size->size }}
@@ -56,9 +56,9 @@
                 @endforeach
             </select>
 
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari produk..."
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Product Name"
                 class="form-control w-auto" />
-            <button type="submit" class="btn btn-outline-custom">Cari</button>
+            <button type="submit" class="btn btn-outline-custom">Search</button>
         </form>
 
         {{-- LIST PRODUK --}}
@@ -73,7 +73,7 @@
                 </div>
             @endforeach
             @if ($products->isEmpty())
-                <p class="text-center">Tidak ada produk ditemukan.</p>
+                <p class="text-center">No products found.</p>
             @endif
         </div>
 
@@ -153,14 +153,14 @@
         // Data produk dari Blade ke JS
         const productsData = [
             @foreach ($products as $product)
-                                    {
+                                                                {
                     name: `{{ addslashes($product->name) }}`,
                     category: `{{ addslashes($product->category->name) }}`,
                     size: `{{ addslashes($product->size) }}`,
                     description: `{{ str_replace('`', '\\`', $product->description) }}`,
                 image: `{{ asset('storage/' . $product->image) }}`,
                 inspiration: `{{ $product->inspiration ? asset('storage/' . $product->inspiration->image_path) : '' }}`
-                                    },
+                                                                },
             @endforeach
         ];
 

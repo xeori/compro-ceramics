@@ -156,17 +156,17 @@
           <p>Feel free to reach out to us on WhatsApp for further information.</p>
           <div class="d-flex flex-column flex-md-row align-items-start gap-3 mt-4">
             <!-- WhatsApp 1 -->
-            <a href="https://wa.me/6281234567890" target="_blank"
+            <a href="https://wa.me/628176838862" target="_blank"
               class="text-decoration-none d-flex align-items-center gap-2">
               <img src="{{ asset('assets/img/whatsapp.svg') }}" alt="WhatsApp" width="24" height="24">
-              <span>+62 8385769227</span>
+              <span>+62 8176838862</span>
             </a>
 
             <!-- WhatsApp 2 -->
-            <a href="https://wa.me/6289876543210" target="_blank"
+            <a href="https://wa.me/6281318803696" target="_blank"
               class="text-decoration-none d-flex align-items-center gap-2">
               <img src="{{ asset('assets/img/whatsapp.svg') }}" alt="WhatsApp" width="24" height="24">
-              <span>+62 8525163267</span>
+              <span>+62 81318803696</span>
             </a>
           </div>
 

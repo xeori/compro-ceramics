@@ -54,7 +54,7 @@
     }
 
     .wa-link:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     #wa-options hr {
@@ -72,13 +72,13 @@
 <!-- Pilihan kontak -->
 <div id="wa-options">
     <div class="wa-contact-group">
-        <p class="wa-label">Owner</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="wa-link">+62 8385769227</a>
+        <p class="wa-label">Marketing</p>
+        <a href="https://wa.me/628176838862" target="_blank" class="wa-link">+62 8176838862</a>
     </div>
     <hr>
     <div class="wa-contact-group">
         <p class="wa-label">Office</p>
-        <a href="https://wa.me/6289876543210" target="_blank" class="wa-link">+62 8525163267</a>
+        <a href="https://wa.me/6281318803696" target="_blank" class="wa-link">+62 81318803696</a>
     </div>
 </div>
 
